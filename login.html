@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in | Caffinity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-root="">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html"><span class="brand-cup" aria-hidden="true">☕</span>Caffinity</a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="site-nav" aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html">Reserve a table</a>
+            <a href="track-order.html">Track order</a>
+                <a href="cart.html" class="cart-link">Cart <span class="cart-count" id="cart-count" hidden>0</span></a>
+                <div class="account-links" id="account-links"></div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth-wrap">
+        <section class="card auth-card">
+            <h1>Welcome back</h1>
+            <p class="muted">Log in to order, track and manage your account.</p>
+
+            <form id="login-form" novalidate>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" autocomplete="email">
+                    <p class="error"></p>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" autocomplete="current-password">
+                    <p class="error"></p>
+                </div>
+                <p class="error" id="login-error"></p>
+                <button type="submit" class="btn btn-block">Log in</button>
+            </form>
+
+            <p class="small row-between" style="margin-top:16px">
+                <a href="forgot-password.html">Forgot password?</a>
+                <span>New here? <a href="register.html">Create an account</a></span>
+            </p>
+
+            <div class="demo-box">
+                <strong>Demo accounts</strong>
+                <table>
+                    <tr><td>Customer</td><td>customer@caffinity.com</td><td><button type="button" class="link-btn" style="color:var(--caramel)" onclick="fill('customer@caffinity.com','customer123')">Use</button></td></tr>
+                    <tr><td>Kitchen</td><td>kitchen@caffinity.com</td><td><button type="button" class="link-btn" style="color:var(--caramel)" onclick="fill('kitchen@caffinity.com','kitchen123')">Use</button></td></tr>
+                    <tr><td>Rider</td><td>rider@caffinity.com</td><td><button type="button" class="link-btn" style="color:var(--caramel)" onclick="fill('rider@caffinity.com','rider123')">Use</button></td></tr>
+                    <tr><td>Owner</td><td>admin@caffinity.com</td><td><button type="button" class="link-btn" style="color:var(--caramel)" onclick="fill('admin@caffinity.com','admin123')">Use</button></td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+   
+</body>
+</html>

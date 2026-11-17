@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Caffinity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-root="">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html"><span class="brand-cup" aria-hidden="true">☕</span>Caffinity</a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="site-nav" aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html">Reserve a table</a>
+            <a href="track-order.html">Track order</a>
+                <a href="cart.html" class="cart-link">Cart <span class="cart-count" id="cart-count" hidden>0</span></a>
+                <div class="account-links" id="account-links"></div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <div class="page-head">
+                <h1>Checkout</h1>
+                <p>Confirm how you want your order and how you will pay.</p>
+            </div>
+
+            <form class="two-col" id="checkout-form" novalidate>
+                <section class="card">
+                    <div class="form-group">
+                        <span class="label">Order type</span>
+                        <div class="choice-row">
+                            <label class="choice"><input type="radio" name="type" value="delivery" checked> Delivery</label>
+                            <label class="choice"><input type="radio" name="type" value="pickup"> Pickup</label>
+                            <label class="choice"><input type="radio" name="type" value="dine_in"> Dine-in</label>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full name</label>
+                            <input type="text" id="name">
+                            <p class="error"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone number</label>
+                            <input type="tel" id="phone" placeholder="01XXXXXXXXX">
+                            <p class="error"></p>
+                        </div>
+                    </div>
+
+                    <div id="delivery-fields">
+                        <div class="form-group">
+                            <label for="area">Delivery area</label>
+                            <select id="area"></select>
+                            <p class="error"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Delivery address</label>
+                            <textarea id="address" placeholder="House, road, block and any landmark"></textarea>
+                            <p class="error"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group hidden" id="table-field">
+                        <label for="table-no">Table number</label>
+                        <input type="number" id="table-no" min="1" max="30" placeholder="Written on the QR card">
+                        <p class="error"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="label">Payment method</span>
+                        <div class="choice-row">
+                            <label class="choice"><input type="radio" name="payment" value="cod" checked> <span id="cash-label">Cash on Delivery</span></label>
+                            <label class="choice"><input type="radio" name="payment" value="bkash"> bKash</label>
+                            <label class="choice"><input type="radio" name="payment" value="nagad"> Nagad</label>
+                        </div>
+                        <p class="muted small hidden" id="wallet-note" style="margin-top:8px">bKash and Nagad are simulated in this prototype. No real money is charged.</p>
+                    </div>
+                </section>
+
+                <aside class="card">
+                    <h2 class="card-title">Your order</h2>
+                    <div id="summary-lines"></div>
+                    <div class="summary-row" style="border-top:1px solid var(--line);margin-top:8px;padding-top:10px"><span>Subtotal</span><span id="subtotal"></span></div>
+                    <div class="summary-row hidden" id="discount-row"><span id="discount-label"></span><span id="discount"></span></div>
+                    <div class="summary-row" id="delivery-row"><span>Delivery charge</span><span id="delivery"></span></div>
+                    <div class="summary-row total"><span>Total</span><span id="total"></span></div>
+                    <p class="error" id="form-error"></p>
+                    <button type="submit" class="btn btn-block" style="margin-top:14px">Place order</button>
+                    <p class="center small" style="margin:12px 0 0"><a href="cart.html">Back to cart</a></p>
+                </aside>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container row-between">
+            <span>© 2026 Caffinity. Coffee, comfort food and more.</span>
+            <span><a href="menu.html">Menu</a> &nbsp; <a href="reservation.html">Reservations</a> &nbsp; <a href="login.html">Staff login</a></span>
+        </div>
+    </footer>
+   
+</body>
+</html>

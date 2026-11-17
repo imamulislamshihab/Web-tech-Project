@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track order | Caffinity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-root="">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html"><span class="brand-cup" aria-hidden="true">☕</span>Caffinity</a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="site-nav" aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html">Reserve a table</a>
+            <a href="track-order.html" class="active" aria-current="page">Track order</a>
+                <a href="cart.html" class="cart-link">Cart <span class="cart-count" id="cart-count" hidden>0</span></a>
+                <div class="account-links" id="account-links"></div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container" style="max-width:760px">
+            <div class="page-head">
+                <h1>Track your order</h1>
+                <p>This page updates by itself every few seconds.</p>
+            </div>
+
+            <div class="table-banner hidden" id="placed-banner">Order placed. The kitchen has received it.</div>
+
+            <form class="card row" id="find-form" style="margin-bottom:20px" novalidate>
+                <div class="form-group" style="flex:1;margin:0">
+                    <label for="order-id">Order number</label>
+                    <input type="text" id="order-id" placeholder="e.g. 2001">
+                    <p class="error"></p>
+                </div>
+                <button type="submit" class="btn btn-dark" style="align-self:end">Track</button>
+            </form>
+
+            <div class="card hidden" id="order-card"></div>
+
+            <section class="card" id="active-list" style="margin-top:20px">
+                <h2 class="card-title">Your active orders</h2>
+                <div id="active-orders"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container row-between">
+            <span>© 2026 Caffinity. Coffee, comfort food and more.</span>
+            <span><a href="menu.html">Menu</a> &nbsp; <a href="reservation.html">Reservations</a> &nbsp; <a href="login.html">Staff login</a></span>
+        </div>
+    </footer>
+   
+</body>
+</html>

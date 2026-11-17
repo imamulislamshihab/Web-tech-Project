@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your cart | Caffinity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-root="">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html"><span class="brand-cup" aria-hidden="true">☕</span>Caffinity</a>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="site-nav" aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservation.html">Reserve a table</a>
+            <a href="track-order.html">Track order</a>
+                <a href="cart.html" class="cart-link active" aria-current="page">Cart <span class="cart-count" id="cart-count" hidden>0</span></a>
+                <div class="account-links" id="account-links"></div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <div class="page-head">
+                <h1>Your cart</h1>
+            </div>
+
+            <div class="card empty hidden" id="empty-cart">
+                <p>Your cart is empty.</p>
+                <a class="btn" href="menu.html">Browse the menu</a>
+            </div>
+
+            <div class="two-col" id="cart-area">
+                <section class="card">
+                    <div id="cart-lines"></div>
+                </section>
+
+                <aside class="card">
+                    <h2 class="card-title">Order summary</h2>
+                    <div class="summary-row"><span>Subtotal</span><span id="subtotal"></span></div>
+                    <div class="summary-row hidden" id="discount-row"><span id="discount-label">Discount</span><span id="discount"></span></div>
+
+                    <div class="form-group" style="margin:14px 0 0">
+                        <label for="coupon">Coupon code</label>
+                        <div class="coupon-row" style="margin:0">
+                            <input type="text" id="coupon" placeholder="e.g. CAFF10">
+                            <button type="button" class="btn btn-caramel" onclick="applyCoupon()">Apply</button>
+                        </div>
+                        <p class="error" id="coupon-error"></p>
+                    </div>
+
+                    <div class="summary-row total"><span>Total</span><span id="total"></span></div>
+                    <p class="muted small">Delivery charge is added at checkout based on your area.</p>
+                    <a class="btn btn-block" href="checkout.html">Go to checkout</a>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container row-between">
+            <span>© 2026 Caffinity. Coffee, comfort food and more.</span>
+            <span><a href="menu.html">Menu</a> &nbsp; <a href="reservation.html">Reservations</a> &nbsp; <a href="login.html">Staff login</a></span>
+        </div>
+    </footer>
+   
+</body>
+</html>
